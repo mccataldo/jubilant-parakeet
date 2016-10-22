@@ -13,6 +13,8 @@
 //    'password':'temp_password'
 //    'permissions':'Admin'
 // })
+// where createAdminUser is a function that can be invoked later
+// more examples with explanations to follow
 
 function postRequestMaker (path, body) {
     function postRequest () {
