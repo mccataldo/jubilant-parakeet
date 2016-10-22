@@ -113,9 +113,14 @@ function tokenGetter (username, password) {
   // alternatively, we could have just did 'return postRequestMaker(...)'
 }
 
-// here's how we're going to use this nested closure thing
-// in 'getAdminToken' we're going to store the function that will get an admin token
-// using tokenGetter that contains 'login' (you need to login to get a token back)
+// here's how this works
+// in 'getAdminToken' below we're going to store the function that will get an admin token
+// using 'tokenGetter' which contains 'login' (you need to login to get a token back)
+// the 'login' function will interface with the API
+// so in this case the consumer of tokenGetter only needs credentials and
+// is not exposed to the /login endpoint in this case
+// pretty sweet
+
 // we'll ultimately get the admin's token by passing in the admin's user and pass
 var getAdminToken = tokenGetter('user','pass')
 // then calling it will return the token
